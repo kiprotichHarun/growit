@@ -1,0 +1,42 @@
+.fonts{
+    font-family: '𝓑𝓸𝓵𝓭 𝓢𝓬𝓻𝓲𝓹𝓽';
+    font-style: italic; 
+    font-style: bold;
+    font-size: 15px;
+}
+
+    
+h1{
+    text-align: center;
+    font-size: 30px;
+    margin-top:40px;
+    font-family: 'bold script';
+    font-style: italic;
+.logo{
+   
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    top:50%;
+    transform:translateY(-50%);
+   
+}    
+   
+}
+.margin-top{
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Trebuchet MS';
+    color: #fff;
+    font-style: italic;
+    font-size:20px;
+    
+}
+   
+
+
+.content{
+    --background: linear-gradient(180deg, rgba(0, 0, 0, 0.98) 1.48%, rgba(19, 70, 117, 0.68) 12.52%, rgba(240, 125, 131, 0.719) 89.52%),
+     url('../../assets/img/mshamba.jpg') no-repeat center center / cover;
+}
