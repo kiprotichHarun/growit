@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align-text-center>login
+      </ion-title>
+      </ion-toolbar>
+      </ion-header>
+<ion-content class="content" >
+ <br><br><br>
+  <form [formGroup]="loginForm">
+
+    <ion-item>
+      
+      <ion-input type="email" formControlName="email" placeholder="Email address"></ion-input>
+    </ion-item>
+    <ion-item>
+     
+      <ion-input type="password" formControlName="password" placeholder="password"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button expand="block" shape="round" (click)="login()">login</ion-button>
+
+  </form>
+
+  <ion-button expand="block" shape="round" [routerDirection]="'forward'" [routerLink]="['/signup']">Register</ion-button>
+    
+
+</ion-content>
+<!-- /(click)="go()"/ -->
