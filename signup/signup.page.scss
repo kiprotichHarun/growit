@@ -1,0 +1,16 @@
+
+ion-item{
+    --background: #f5f5f5;
+    --color: rgb(0, 0, 0);
+}
+
+ion-button{
+    --background: #02296b;
+} 
+.content{
+    --background: linear-gradient(180deg, rgba(0, 0, 0, 0.98) 1.48%, rgba(10, 62, 110, 0.68) 12.52%, rgb(241, 105, 112) 89.52%), url('../../assets/img/mkulima.jpg') no-repeat center center / cover;
+}
+
+h3{
+    color: #ffffff
+}
