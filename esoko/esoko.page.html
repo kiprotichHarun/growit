@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align-text>marketplace
+    <ion-button  expand="block" float-right size="small" fill="clear" (click)="sendSMS()"><ion-icon name="people" slot="start"></ion-icon></ion-button></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contents">
+ 
+    
+
+  
+   <ion-card   class="cards">
+  <ion-row><ion-col><div><ion-card  ><img src="/assets/img/beans.jpg"/></ion-card></div></ion-col>
+    <ion-card-content>
+      
+      <ion-row>
+        <ion-col><div class="mafunzo" text-center>buy/sell</div><div class="mafunzo"> 2 debes of beans<br>being sold at nakuru</div></ion-col></ion-row>
+     <div float-right> <ion-button class="col text-right"  size="medium" shape="round" color="light" > 
+            <ion-icon  size="medium" slot="start"  color="danger" name="basket"></ion-icon>
+          <ion-label>view</ion-label></ion-button></div>
+    </ion-card-content>
+  </ion-row>
+</ion-card>   
+<!-- //another field -->
+<ion-card  class="cards">
+  <ion-row><ion-col><div><ion-card  ><img src="/assets/img/blurry.jpg"/></ion-card></div></ion-col>
+    <ion-card-content>
+      
+      <ion-row>
+        <ion-col><div class="mafunzo" text-center>buy/sell</div><div class="mafunzo">200 bags of maize<br>being sold at nyeri</div></ion-col></ion-row>
+     <div float-right> <ion-button class="col text-right"  size="medium" shape="round" color="light" > 
+            <ion-icon  size="medium" slot="start"  color="dark" name="cart"></ion-icon>
+          <ion-label>view</ion-label></ion-button></div>
+    </ion-card-content>
+  </ion-row>
+</ion-card>
+  <!--another field  -->
+<ion-card  class="cards">
+  <ion-row><ion-col><div><ion-card  ><img src="/assets/img/ngombe.jpg"/></ion-card></div></ion-col>
+    <ion-card-content>
+      
+      <ion-row>
+        <ion-col><div class="mafunzo" text-center>buy/sell</div><div class="mafunzo">one fresian/jersey heifer<br>being sold at Londiani</div></ion-col></ion-row>
+     <div float-right> <ion-button class="col text-right"  size="medium" shape="round" color="light" > 
+            <ion-icon  size="medium" slot="start"  color="tertiary" name="cafe"></ion-icon>
+          <ion-label>view</ion-label></ion-button></div>
+    </ion-card-content>
+  </ion-row>
+</ion-card>  
+<!-- another class -->
+<ion-card  class="cards">
+  <ion-row><ion-col><div><ion-card  ><img src="/assets/img/cabbages.png"/></ion-card></div></ion-col>
+    <ion-card-content>
+      
+      <ion-row>
+        <ion-col><div class="mafunzo" text-center>buy/sell</div><div class="mafunzo">three bags of cabbages<br>being sold at Londiani</div></ion-col></ion-row>
+     <div float-right> <ion-button class="col text-right"  size="medium" shape="round" color="light" > 
+            <ion-icon  size="medium" slot="start"  color="success" name="gift"></ion-icon>
+          <ion-label>view</ion-label></ion-button></div>
+    </ion-card-content>
+  </ion-row>
+</ion-card> 
+<!-- another instace of something being sold -->
+<ion-card  class="cards">
+  <ion-row><ion-col><div><ion-card  ><img src="/assets/img/kuku.jpg"/></ion-card></div></ion-col>
+    <ion-card-content>
+      
+      <ion-row>
+        <ion-col><div  text-center>buy/sell</div><div class="mafunzo">kienyeji chickens<br>seller located in kariobangi</div></ion-col></ion-row>
+     <div float-right> <ion-button class="col text-right"  size="medium" shape="round" color="light" > 
+            <ion-icon  size="medium" slot="start"  color="danger" name="basket"></ion-icon>
+          <ion-label>view</ion-label></ion-button></div>
+    </ion-card-content>
+  </ion-row>
+</ion-card> 
+
+
+<!-- //start of image button function -->
+<img [src]="currentImage" *ngIf="currentImage">
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="takePicture()">
+      <ion-icon name="camera" ></ion-icon>
+    </ion-fab-button>
+</ion-fab>
+
+
+</ion-content>
