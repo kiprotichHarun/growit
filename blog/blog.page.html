@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>
+      <ion-button expand="block" fill="clear" (click)="go()" float-left><ion-icon name="arrow-round-back" slot="start"></ion-icon></ion-button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+<ion-grid >
+  <ion-row *ngFor="let message of messages">
+    <ion-col size="9" *ngIf="currentUser !== message.user" class="message other-message">
+      <b>{{message.user}}</b><br> <!-- start every message as a user -->
+     <span>{{message.msg}}</span>   <!-- message itself -->
+     <div class="time" text-right><br>
+     {{message.createdAt | date:'short'}}</div> <!--display the time of the text -->
+    </ion-col>
+
+    
+      <ion-col offset="3" *ngIf="currentUser === message.user" class="message mymessage">
+        <b>{{message.user}}</b><br> <!-- start every message as a user -->
+       <span>{{message.msg}}</span>   <!-- message itself -->
+       <div class="time" text-right><br>
+       {{message.createdAt | date:'short'}}</div> <!--display the time of the text -->
+      </ion-col>
+    
+  </ion-row>
+</ion-grid>
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar  >
+    <ion-row align-items-center no-padding >
+      <ion-col size="10">
+        <textarea autosize maxRows="4" shape="round" [(ngModel)]="newMsg" class="message-input" placeholder="input a message"></textarea>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button expand="block" fill="clear" color="primary" [disabled]="newMsg ===''" class="msg-btn"
+        (click)="sendMessage()">
+      <ion-icon name="checkmark-circle-outline" slot="icon-only" size="large"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
