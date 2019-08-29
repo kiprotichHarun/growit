@@ -1,13 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align-text-center>mfarm
+      
+      <ion-button size="small" fill="clear" float-right (click)="presentActionSheet()">
+          <ion-icon size="medium" class="icons" slot="end"  name="settings"></ion-icon> 
+         </ion-button></ion-title>
+      </ion-toolbar>
+      </ion-header>
 
 <ion-content class="content">
   <!-- <div><ion-button float-right  fill="clear" shape="round" (click)="go()" color="dark" ><ion-icon size="medium" class="icon" slot="end"  name="arrow-round-back">
 
   </ion-icon></ion-button></div> --> <br><br><br> 
-  <div class="maandishi">pata ufundisho kuhusu ukulima</div>
+  <!-- <div class="maandishi">pata ufundisho kuhusu ukulima</div> -->
  
    <!-- poultry farming card -->
    
-     
+    
     <ion-card  class="welcome-card">
       <ion-img src="/assets/img/cock.jpg"></ion-img>
         <ion-card-header>
@@ -27,7 +36,7 @@
     <ion-card-title>dairy farming</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <ion-button  expand="block" fill="outline" size="medium" shape="round">learn/jifunze </ion-button>
+    <ion-button  expand="block" fill="outline" size="medium" shape="round" >learn/jifunze </ion-button>
   </ion-card-content>   
 </ion-card>
 
@@ -51,7 +60,7 @@
         <ion-card-title>potato farming</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-button expand="block" fill="outline" size="medium" shape="round">learn/jifunze </ion-button>
+        <ion-button expand="block" fill="outline" size="medium" shape="round" >learn/jifunze </ion-button>
       </ion-card-content>   
     </ion-card>
 
@@ -67,8 +76,29 @@
   </ion-card-content>   
 </ion-card>
              
-  
-
+ <!-- fab placed in the center of the content with a list on each side -->
+ <ion-fab vertical="top" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="construct"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button href="https://www.roysfarm.com/poultry-farming-in-kenya/">poultry</ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+      <ion-fab-button href="https://www.tuko.co.ke/278571-dairy-farming-kenya-road-success.html#278571">dairy</ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button href="http://socaa.or.ke/set-high-production-targets-for-all-crops-maize-case-study/">maize</ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button href="https://cropnuts.com/potato-farming-guide/">potato</ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content> 
+<!-- <ion-icon name="logo-vimeo"></ion-icon> -->
+<!-- <ion-icon name="logo-facebook"></ion-icon>
+<ion-icon name="logo-instagram"></ion-icon>
+<ion-icon name="logo-twitter"></ion-icon> -->
 <!-- <ion-tabs> 
 
   <ion-tab-bar slot="bottom">
