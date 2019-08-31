@@ -1,122 +1,84 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title align-text-center>mfarm
-      
-      <ion-button size="small" fill="clear" float-right (click)="presentActionSheet()">
-          <ion-icon size="medium" class="icons" slot="end"  name="settings"></ion-icon> 
-         </ion-button></ion-title>
-      </ion-toolbar>
-      </ion-header>
+
 
 <ion-content class="content">
-  <!-- <div><ion-button float-right  fill="clear" shape="round" (click)="go()" color="dark" ><ion-icon size="medium" class="icon" slot="end"  name="arrow-round-back">
-
-  </ion-icon></ion-button></div> --> <br><br><br> 
-  <!-- <div class="maandishi">pata ufundisho kuhusu ukulima</div> -->
- 
-   <!-- poultry farming card -->
+  <!-- poultry -->
+    <ion-card class="background">
+        <img src="/assets/img/chick.jpg"/>
+        
+        <div class="card-stitle">
+        
+          <ion-button fill="outline" size="medium" href="https://firebasestorage.googleapis.com/v0/b/growit-1d290.appspot.com/o/poultry.pdf?alt=media&token=7a29755d-3cf2-4f62-b341-901ace2d7d3b" ><ion-icon name="arrow-round-forward"></ion-icon>explore </ion-button>
+       </div>
+       <div class="poultry" float-left>poultry farming</div>
+       <ion-card-header class="header" float-left>jifunze kutunza kuku wako kwa kuzingatia njia mwafaka zilizoidhinishwa na wataalamu ili kuongeza mapato<br>
+      <ion-button color="success" shape="round" float-right href="https://www.roysfarm.com/poultry-farming-in-kenya">
+        <ion-icon name="locate" size="small"></ion-icon></ion-button>
+      </ion-card-header>
+       
+      </ion-card>
    
-    
-    <ion-card  class="welcome-card">
-      <ion-img src="/assets/img/cock.jpg"></ion-img>
-        <ion-card-header>
-         <ion-card-subtitle>jifunze mengi kuhusu ufugaji wa kuku ili kuongeza mapato yako</ion-card-subtitle> 
-        <ion-card-title text center >poultry farming</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-button  expand="block" fill="outline" size="medium" shape="round" >learn/jifunze </ion-button>
-      </ion-card-content>   
-    </ion-card>
-<!-- dairy farming card -->
+    <!-- dairy -->
+      <ion-card class="background">
+          <img src="/assets/img/dairy.png"/>
+          
+          <div class="card-stitle">
+          
+            <ion-button fill="outline" size="medium" href="https://firebasestorage.googleapis.com/v0/b/growit-1d290.appspot.com/o/Zero%20Grazing%20Housing_1.pdf?alt=media&token=6e367979-20f5-4ee7-bff8-e64a7065e499" ><ion-icon name="arrow-round-forward"></ion-icon>explore </ion-button>
+         </div>
+         <div class="poultry" float-left>Dairy Farming</div>
+         <ion-card-header class="header" float-left>ongeza mazao wangombe kwa kutumia mweleke mzuri uliotolewa na wataalamu<br>
+        <ion-button color="success" shape="round"float-right href="https://www.tuko.co.ke/278571-dairy-farming-kenya-road-success.html#278571">
+          <ion-icon name="locate" size="small"></ion-icon></ion-button>
+        </ion-card-header>
+         
+        </ion-card>
+   
+        <!-- potato -->
+        <ion-card class="background">
+            <img src="/assets/img/piasi.png"/>
+            
+            <div class="card-stitle">
+            
+              <ion-button shape="outline" size="medium" href="https://firebasestorage.googleapis.com/v0/b/growit-1d290.appspot.com/o/Production_of_food_potatoes.pdf?alt=media&token=bf82a9ed-2a03-42a9-bd98-146b5ef75faa" ><ion-icon name="arrow-round-forward"></ion-icon>explore </ion-button>
+           </div>
+           <div class="poultry" float-left>potato Farming</div>
+           <ion-card-header class="header" float-left>tumia ujuzi wa kisasa kuhakikisha unapata mapato murua kutokana na viazi<br>
+          <ion-button color="success" shape="round" color="success"float-right href="https://cropnuts.com/potato-farming-guide/" >
+            <ion-icon name="locate" size="small"></ion-icon></ion-button>
+          </ion-card-header>
+           
+          </ion-card>
 
-<ion-card  class="welcome-card">
-  <ion-img src="/assets/img/cows.jpg"></ion-img>
-    <ion-card-header>
-     <ion-card-subtitle>jua kumtunza ngombe wako kwa njia mwafaka</ion-card-subtitle> 
-    <ion-card-title>dairy farming</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-button  expand="block" fill="outline" size="medium" shape="round" >learn/jifunze </ion-button>
-  </ion-card-content>   
-</ion-card>
-
-
-     <!-- for cabbage farming -->
-     <ion-card  class="welcome-card">
-      <ion-img src="/assets/img/cabbage.jpg"></ion-img>
-        <ion-card-header>
-         <ion-card-subtitle>ongeza pato la shamba lako la mboga</ion-card-subtitle> 
-        <ion-card-title>cabbage farming</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-button expand="block" fill="outline" size="medium" shape="round">learn/jifunze </ion-button>
-      </ion-card-content>   
-    </ion-card>
-    <!--potato farming  -->
-    <ion-card  class="welcome-card">
-      <ion-img src="/assets/img/potato.jpg"></ion-img>
-        <ion-card-header>
-         <ion-card-subtitle>tumia ujuzi wa kisasa ili kupata pato murua kutokana na kilimo cha viazi</ion-card-subtitle> 
-        <ion-card-title>potato farming</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-button expand="block" fill="outline" size="medium" shape="round" >learn/jifunze </ion-button>
-      </ion-card-content>   
-    </ion-card>
-
-<!-- maize farming -->
-<ion-card  class="welcome-card">
-  <ion-img src="/assets/img/maize.jpg"></ion-img>
-    <ion-card-header>
-     <ion-card-subtitle>ongeza mazao ya mahindi kwa kufuata mawaidha kutoka kwa wataalam</ion-card-subtitle> 
-    <ion-card-title>Maize farming </ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-button expand="block" fill="outline" size="medium"shape="round">learn/jifunze </ion-button>
-  </ion-card-content>   
-</ion-card>
+          <!-- cabbage -->
+          <ion-card class="background">
+              <img src="/assets/img/kales.png"/>
+              
+              <div class="card-stitle">
+              
+                <ion-button fill="outline" size="medium" href="https://firebasestorage.googleapis.com/v0/b/growit-1d290.appspot.com/o/cabbage.pdf?alt=media&token=db116f7b-677b-4034-a316-59f8c1eedef9" ><ion-icon name="arrow-round-forward"></ion-icon>explore </ion-button>
+             </div>
+             <div class="poultry" float-left>cabbage farming</div>
+             <ion-card-header class="header" float-left>get the best out from your cabbage farm by follwing a set of steps stipulated by specialists<br>
+            <ion-button  shape="round"color="success"float-right >
+              <ion-icon name="locate" size="small"></ion-icon></ion-button>
+            </ion-card-header>
              
- <!-- fab placed in the center of the content with a list on each side -->
- <ion-fab vertical="top" horizontal="center" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="construct"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button href="https://www.roysfarm.com/poultry-farming-in-kenya/">poultry</ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="bottom">
-      <ion-fab-button href="https://www.tuko.co.ke/278571-dairy-farming-kenya-road-success.html#278571">dairy</ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="start">
-      <ion-fab-button href="http://socaa.or.ke/set-high-production-targets-for-all-crops-maize-case-study/">maize</ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="end">
-      <ion-fab-button href="https://cropnuts.com/potato-farming-guide/">potato</ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-</ion-content> 
-<!-- <ion-icon name="logo-vimeo"></ion-icon> -->
-<!-- <ion-icon name="logo-facebook"></ion-icon>
-<ion-icon name="logo-instagram"></ion-icon>
-<ion-icon name="logo-twitter"></ion-icon> -->
-<!-- <ion-tabs> 
-
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="tab1">
-      <ion-icon name="home" color="dark"></ion-icon>
-      <ion-label>home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab2">
-      <ion-icon name="images" color="dark"></ion-icon>
-      <ion-label>gallery</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab3">
-      <ion-icon name="paper-plane" color="dark"></ion-icon>
-      <ion-label>Discover</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-
-</ion-tabs>
-</ion-content> -->
+            </ion-card>
+             
+            <!-- maize -->
+            <ion-card class="background">
+                <img src="/assets/img/corn.jpg"/>
+                
+                <div class="card-stitle">
+                
+                  <ion-button fill="outline" size="medium" href="https://firebasestorage.googleapis.com/v0/b/growit-1d290.appspot.com/o/Olwande_Smallholder_Maize_Efficiency_Kenya.pdf?alt=media&token=48b45cbf-0db4-4ac3-964a-6313d2589c2a" ><ion-icon name="arrow-round-forward"></ion-icon>explore </ion-button>
+               </div>
+               <div class="poultry" float-left>maize farming</div>
+               <ion-card-header class="header" float-left>imporove the productivity of you maize farm by uisng new improved techniques<br>
+              <ion-button  shape="round" color="success" float-right href="http://socaa.or.ke/set-high-production-targets-for-all-crops-maize-case-study/">
+                <ion-icon name="locate"  size="small"></ion-icon></ion-button>
+              </ion-card-header>
+               
+              </ion-card>
+   
+              
