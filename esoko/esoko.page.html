@@ -1,25 +1,27 @@
 <ion-header>
   <ion-toolbar>
     <ion-title align-text>marketplace
-    <ion-button  expand="block" float-right size="small" fill="clear" (click)="sendSMS()"><ion-icon name="people" slot="start"></ion-icon></ion-button></ion-title>
+      <ion-button float-right shape="round" (click)="uploadFile()" *ngIf="!imageURL"  color=primary fill="outline"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+  </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="contents">
   <br>
- 
+ <!-- for picking the input from the user -->
     <input type="file" *ngIf="!imageURL" (change)="fileChanged($event)" class="filebtn" #fileButton/>
     
-    <ion-button float-center shape="round" (click)="uploadFile()" *ngIf="!imageURL"  color=primary fill="outline">Upload File</ion-button>
+    <!-- <ion-button float-center shape="round" (click)="uploadFile()" *ngIf="!imageURL"  color=primary fill="outline">Upload File</ion-button> -->
   
+
 
      <ion-card   class="cards" *ngIf="imageURL">
   <ion-row><ion-col><div><ion-card  ><img  src="https://ucarecdn.com/{{ imageURL}}/"/></ion-card></div></ion-col>
     <ion-card-content>
-      
       <ion-row>
         <ion-col>
-          <ion-textarea placeholder="enter some description"[(ngModel)]="desc">
+          <ion-textarea placeholder="location:
+          price"[(ngModel)]="desc">
             </ion-textarea><ion-icon color="primary" name="pin"></ion-icon>
         </ion-col>
       </ion-row>
@@ -32,58 +34,24 @@
     </ion-card-content>
   </ion-row>
 </ion-card>   
+<!-- display the posted content -->
 
- <!-- <ion-card  class="cards">
-  <ion-row><ion-col><div><ion-card  ><img src="/assets/img/blurry.jpg"/></ion-card></div></ion-col>
-    <ion-card-content>
-      
-      <ion-row>
-        <ion-col><div class="mafunzo" text-center>buy/sell</div><div class="mafunzo">200 bags of maize<br>being sold at nyeri</div></ion-col></ion-row>
-     <div float-right> <ion-button class="col text-right"  size="medium" shape="round" color="light" > 
-            <ion-icon  size="medium" slot="start"  color="dark" name="cart"></ion-icon>
-          <ion-label>view</ion-label></ion-button></div>
-    </ion-card-content>
-  </ion-row>
-</ion-card>
+ <div id="images">
   
-<ion-card  class="cards">
-  <ion-row><ion-col><div><ion-card  ><img src="/assets/img/ngombe.jpg"/></ion-card></div></ion-col>
-    <ion-card-content>
-      
-      <ion-row>
-        <ion-col><div class="mafunzo" text-center>buy/sell</div><div class="mafunzo">one fresian/jersey heifer<br>being sold at Londiani</div></ion-col></ion-row>
-     <div float-right> <ion-button class="col text-right"  size="medium" shape="round" color="light" > 
-            <ion-icon  size="medium" slot="start"  color="tertiary" name="cafe"></ion-icon>
-          <ion-label>view</ion-label></ion-button></div>
-    </ion-card-content>
-  </ion-row>
-</ion-card>  
+  <div class="image" *ngFor="let post of (userPosts | async)?.posts">
+    <ion-card class="cards">
+      <ion-img src="https://ucarecdn.com/{{post.image}}/-/scale_crop/200x200/center"></ion-img>
+        
+        <ion-card-content class="post"> <p>{{post.desc}}</p></ion-card-content>
+        </ion-card>
+    
+  </div>
+  
+</div>  
 
-<ion-card  class="cards">
-  <ion-row><ion-col><div><ion-card  ><img src="/assets/img/cabbage.jpg"/></ion-card></div></ion-col>
-    <ion-card-content>
-      
-      <ion-row>
-        <ion-col><div class="mafunzo" text-center>buy/sell</div><div class="mafunzo">three bags of cabbages<br>being sold at Londiani</div></ion-col></ion-row>
-     <div float-right> <ion-button class="col text-right"  size="medium" shape="round" color="light" > 
-            <ion-icon  size="medium" slot="start"  color="success" name="gift"></ion-icon>
-          <ion-label>view</ion-label></ion-button></div>
-    </ion-card-content>
-  </ion-row>
-</ion-card> 
 
-<ion-card  class="cards">
-  <ion-row><ion-col><div><ion-card  ><img src="/assets/img/kuku.jpg"/></ion-card></div></ion-col>
-    <ion-card-content>
-      
-      <ion-row>
-        <ion-col><div  text-center>buy/sell</div><div class="mafunzo">kienyeji chickens<br>seller located in kariobangi</div></ion-col></ion-row>
-     <div float-right> <ion-button class="col text-right"  size="medium" shape="round" color="light" > 
-            <ion-icon  size="medium" slot="start"  color="danger" name="basket"></ion-icon>
-          <ion-label>view</ion-label></ion-button></div>
-    </ion-card-content>
-  </ion-row>
-</ion-card>     -->
+
+
 
 <!-- start of image button function  -->
 <!-- <img [src]="currentImage" *ngIf="currentImage">
