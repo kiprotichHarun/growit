@@ -6,13 +6,13 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Storage } from '@ionic/storage';
 import { SMS } from '@ionic-native/sms/ngx';
 
-import {Http} from '@angular/http'
+import {Http} from '@angular/http';
 
 import { firestore } from 'firebase/app';
 import { UserService } from '../services/user.service';
 
 
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore} from '@angular/fire/firestore';
 
 
 
@@ -24,7 +24,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 export class EsokoPage implements OnInit {
   captureDataUrl: string;
   
-
+  userPosts
   
   
   imageURL:string
@@ -35,8 +35,10 @@ export class EsokoPage implements OnInit {
   currentImage: any;
 
   constructor(private sms: SMS ,private storage: Storage, private camera: Camera, 
-    private router:Router,public http:Http,public afstore: AngularFirestore,public user: UserService) {
+    private router:Router, public http:Http, public afstore: AngularFirestore, public user: UserService, private afs: AngularFirestore ) {
       
+      const posts = afs.doc(`users/cEBynmz9ClXj66doTUaX`)
+      this.userPosts = posts.valueChanges()
      }
 
  
@@ -82,6 +84,7 @@ export class EsokoPage implements OnInit {
 createPost(){
 const image = this.imageURL
 const desc = this.desc
+//hardcode the collection id from firebase
 this.afstore.doc(`users/cEBynmz9ClXj66doTUaX`).update({
   posts:firestore.FieldValue.arrayUnion({
     image,
@@ -95,4 +98,5 @@ this.afstore.doc(`users/cEBynmz9ClXj66doTUaX`).update({
 uploadFile(){
   this.fileButton.nativeElement.click()
 }
+
 }
