@@ -1,8 +1,8 @@
 <ion-header >
   <ion-toolbar  >
- 
-    <ion-button size="small" fill="clear" float-right (click)="presentAlertConfirm()">
-     <ion-icon size="medium" class="icons" slot="end"  name="settings"></ion-icon> 
+      <img src="assets/img/mfarm.png" height="50px" width="50px" class="logo"/>
+    <ion-button size="large" fill="clear" float-right (click)="presentAlertConfirm()">
+     <ion-icon size="medium" class="icons" slot="end"  name="ios-options"></ion-icon> 
     </ion-button>
   </ion-toolbar>
 </ion-header>
@@ -10,7 +10,7 @@
 <!-- @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap'); -->
   <ion-content class="content" padding  >
       <ion-card class="background">
-          <img src="/assets/img/fruits.jpg"/>
+          <img src="/assets/img/images.png"/>
           <div class="card-stitle">mkulimabunifu</div>
           <div class="card-subtitle">farming should not be a poor man's job but a bridge to prosperity</div>
           
@@ -22,16 +22,20 @@
           <div class="card-title">farming should not be a poor man's job but a bridge to prosperity</div>
         </div>
     </ion-card> -->
+    
   <!-- masomo -->
     <ion-card class="kadi">
   
-        <ion-row><ion-col><div><ion-card  ><img src="/assets/img/books.jpg"/></ion-card></div></ion-col>
+        <ion-row><ion-col><div><ion-card  ><img height="100px" width="300px" src="/assets/img/pdf.svg"/></ion-card></div></ion-col>
         <ion-card-content>
           
           <ion-row>
-            <ion-col><div class="mafunzo" text-center>mafunzo</div><div> jifunze kukuza mimea na mifugo<br> kutumia huduma ya mfarm</div></ion-col></ion-row>
+            <ion-col>
+              <div class="mafunzo" text-center>mafunzo</div>
+              <div class="card"> jifunze kukuza mimea na mifugo<br> kutumia huduma ya mfarm</div>
+            </ion-col></ion-row>
          <div float-right> <ion-button class="col text-right"  size="medium" (click)="go()" shape="round" color="light" > 
-                <ion-icon  size="medium" slot="start"  color="success" name="flower"></ion-icon>
+                <ion-icon  size="medium" slot="start"  color="dark" name="ios-easel"></ion-icon>
               <ion-label>Mfarm</ion-label></ion-button></div>
         </ion-card-content>
        
@@ -43,13 +47,13 @@
 
   <!-- goes to esoko -->
   
-  <ion-card class=kadis>
+  <ion-card class=kadi>
   
-      <ion-row><ion-col><div><ion-card class="trial" ><img src="/assets/img/icon.jpg"/></ion-card></div></ion-col>
+      <ion-row><ion-col><div><ion-card class="trial" ><img src="/assets/img/shop.svg"/></ion-card></div></ion-col>
       <ion-card-content>
         
         <ion-row>
-          <ion-col><div class="mafunzo" text-center>Esoko</div><div>uza na kununua<br> kutumia huduma ya esoko</div></ion-col></ion-row><p>
+          <ion-col><div class="mafunzo" text-center>Esoko</div><div class="card">uza na kununua<br> kutumia huduma ya esoko</div></ion-col></ion-row><p>
           <ion-button float-right  size="medium" (click)="goTo()" shape="round" color="light" > 
               <ion-icon  size="medium" slot="start"  color="dark" name="cash"></ion-icon>
             <ion-label>Esoko</ion-label></ion-button></p>
@@ -64,11 +68,11 @@
 
 
   
-<ion-card class="kadiss">
+<ion-card class="kadi">
   
     <ion-row><ion-col>
       <div>
-        <ion-card  ><img src="/assets/img/chat.png"/></ion-card>
+        <ion-card  ><img src="assets/img/message.svg"  class="logo"/></ion-card>
       </div>
     </ion-col>
     <ion-card-content>
@@ -76,40 +80,41 @@
       <ion-row>
         <ion-col>
           <div class="mafunzo">blogs and chats</div>
-          <div>kukuza mimea na mifugo<br> kutumia huduma ya mfarm</div>
+       <div class="card">pata mawaidha na maono<br> kutoka kwa wakulima wenzako</div>
         </ion-col>
       </ion-row><p>
         <ion-button float-right  size="medium" (click)="openblog()" shape="round" color="light" > 
-            <ion-icon  size="medium" slot="start"  color="danger" name="chatbubbles"></ion-icon>
+            <ion-icon  size="medium" slot="start"  color="danger" name="ios-chatbubbles"></ion-icon>
           <ion-label>blog</ion-label></ion-button></p>
     </ion-card-content>
    
    </ion-row>
   </ion-card>
   
-
-
-
-
+  <!-- communication center -->
+  <ion-card class="kadi">
+  
+      <ion-row><ion-col>
+        <div>
+          <ion-card  ><img src="assets/img/call.svg"  class="logo"/></ion-card>
+        </div>
+      </ion-col>
+      <ion-card-content>
+        
+        <ion-row>
+          <ion-col>
+            <div class="mafunzo">messaging service</div>
+         <div class="card">ongea na mtaalamu wa kilimo<br> moja kwa moja</div>
+          </ion-col>
+        </ion-row><p>
+          <ion-button float-right  size="medium" (click)="openContacts()" shape="round" color="light" > 
+              <ion-icon  size="medium" slot="start"  color="dark" name="ios-megaphone"></ion-icon>
+            <ion-label>contacts</ion-label></ion-button></p>
+      </ion-card-content>
+     
+     </ion-row>
+    </ion-card>
+    
+  
 
   </ion-content>
-<!-- <ion-tabs>
-
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="tab1">
-      <ion-icon name="home" color="dark"></ion-icon>
-      <ion-label>home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab2">
-      <ion-icon name="images" color="dark"></ion-icon>
-      <ion-label>gallery</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab3">
-      <ion-icon name="paper-plane" color="dark"></ion-icon>
-      <ion-label>Discover</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-
-</ion-tabs> -->

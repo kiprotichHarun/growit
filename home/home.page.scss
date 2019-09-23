@@ -29,19 +29,17 @@
  --background: linear-gradient(180deg, rgba(0, 0, 0, 0.98) 1.48%, rgba(19, 70, 117, 0.68) 12.52%, rgba(243, 136, 141, 0.685) 89.52%), url('../../assets/img/comp.jpg') no-repeat center center / cover;
 
 }
-.welcome-card{
-  position: relative;
-}
-.myoverlay{
-  width: 100%;
-  height: 60px;
-  position: absolute;
-  z-index: 99;
-  bottom: 0px;
-  opacity: 0.5;
-  background: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-}
+
+// .myoverlay{
+//   width: 100%;
+//   height: 60px;
+//   position: absolute;
+//   z-index: 99;
+//   bottom: 0px;
+//   opacity: 0.5;
+//   background: rgb(0, 0, 0);
+//   color: rgb(255, 255, 255);
+// }
 .card-title{
   color: white
 }
@@ -52,15 +50,10 @@
   
   background:rgba(255, 255, 255, 0.651);
   border-radius: 5px;
+  width: 105%;
+    left: -5%;
 }
-.kadis{
-  background: rgba(255, 255, 255, 0.719);
-  border-radius: 10px;
-}
-.kadiss{
-  background: rgba(255, 255, 255, 0.767);
-  border-radius: 15px;
-}
+
 .mafunzo{
 color: black;
 font-style: oblique;
@@ -72,17 +65,24 @@ font-size: 20px;
 .background{
   position: relative;
   text-align: center;
+  
+  
+    width: 105%;
+    left: -5%;
 }
 .card-stitle{
   position:absolute;
-  font-size: 2.0em;
+  font-size: 1.5em;
+  font-style: italic;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   top: 36%;
   width: 100%;
   font-weight: 100%;
   color: azure;
 }
 .card-subtitle{
-  font-size: 1.0em;
+  font-size: 1.5em;
+  font-style: italic;
   position: absolute;
   top: 52%;
   width: 100%;
