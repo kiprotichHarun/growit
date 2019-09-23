@@ -1,31 +1,64 @@
-import { Component, OnInit } from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth'
-import { FormGroup, FormControl } from '@angular/forms';
+import {Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import{LoadingController, AlertController } from '@ionic/angular';
+import{FormBuilder, FormGroup, Validators } from '@angular/forms';
+import{Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss'],
+
+selector: 'app-signup',
+templateUrl: './signup.page.html',
+styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-  //this picks the values for the username and password
-  public registerForm: FormGroup;
+public signupForm: FormGroup;
+public loading: any;
+constructor(
+private authService: AuthService,
+private loadingCtrl: LoadingController,
+private alertCtrl: AlertController,
+private formBuilder: FormBuilder,
+private router: Router
+) {
+this.signupForm = this.formBuilder.group({
+email: [
+'',
+Validators.compose([Validators.required, Validators.email]),
+],
+password: [
+'',
+Validators.compose([Validators.minLength(6), Validators.required]),
+],
+});
+}
+ngOnInit() {}
 
-  constructor(public authService: AuthService) {
-    this.registerForm = new FormGroup({
-      email: new FormControl(),
-      password: new FormControl(),
-      fullname: new FormControl(),
-    });
+async signupUser(signupForm: FormGroup): Promise<void> {
+  if (!signupForm.valid) {
+  console.log(
+  'Need to complete the form, current value: ', signupForm.value
+  );
+  } else {
+  const email: string = signupForm.value.email;
+  const password: string = signupForm.value.password;
+  this.authService.signupUser(email, password).then(
+  () => {
+  this.loading.dismiss().then(() => {
+  this.router.navigateByUrl('home');
+  });
+  },
+  error => {
+  this.loading.dismiss().then(async () => {
+  const alert = await this.alertCtrl.create({
+  message: error.message,
+  buttons: [{ text: 'Ok', role: 'cancel' }],
+  });
+  await alert.present();
+  });
   }
-
-  ngOnInit() {
+  );
+  this.loading = await this.loadingCtrl.create();
+  await this.loading.present();
   }
-
-  async register() {
-    await this.authService.signup(this.registerForm.value["email"], this.registerForm.value["password"]).then((value) => {
-
-    });
-  }
-
+}
 }
