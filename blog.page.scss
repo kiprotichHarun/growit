@@ -1,0 +1,64 @@
+.content{
+    --background: #ffffff url('../../assets/img/coffee.jpg') no-repeat center center / cover;
+}
+.message{
+padding: 10px;
+border-radius: 10px;
+margin-bottom: 4px;
+white-space: pre-wrap;
+}
+.other-message{
+   background: rgba(7, 60, 233, 0.747);
+   color: rgb(248, 248, 248)
+}
+.mymessage{
+    background: rgba(29, 247, 0, 0.692);
+    color: rgb(255, 255, 255)
+}
+.time{
+color: black;
+font-style: italic
+}
+.message-input{
+width: 100%;
+border: 2px solid rgba(29, 134, 253, 0.808);
+border-radius: 10px;
+background: rgb(255, 255, 255);
+resize: none;
+padding-left: 10px;
+padding-right: 10px
+}
+.msg-btn{
+ --padding-start:0.5em;
+ --padding-end:0.5em;
+}
+.chat{
+    display: flex;
+    flex-direction: column;
+    .me{
+        position: relative;
+        margin: 20px 5px 0px;
+        max-width: 80%;
+    align-self: flex-end;
+    padding: 6px 10px 7px;
+    border-radius: 15px 15px 0;
+    background: rgb(137, 236, 137);
+    font-size: medium;
+    line-height: 1.4;    
+    }
+    .you{
+        position: relative;
+        margin: 15px;
+        max-width: 80%;
+        align-self: flex-start;
+        padding: 6px 10px 7px;
+        border-radius: 15px 15px 15px 0;
+        background: rgb(64, 235, 64);
+        font-size: medium;
+        line-height: 1.4;
+    }
+    .name{
+        font-size: medium;
+        font-weight: bold;
+    }
+}
