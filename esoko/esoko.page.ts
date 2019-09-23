@@ -68,7 +68,7 @@ export class EsokoPage implements OnInit {
     const data = new FormData()
     data.append('file', files[0])
     data.append('UPLOADCARE_STORE','1')
-    data.append('UPLOADCARE_PUB_KEY','7ff142cc450044903a91')
+    data.append('UPLOADCARE_PUB_KEY','41b0ef5e4e9d516d8906')
 
      this.http.post('https://upload.uploadcare.com/base/',data)
      .subscribe(event =>{
