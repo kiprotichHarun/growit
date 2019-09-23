@@ -24,3 +24,20 @@ border-radius: 5px;
     top: -100em;
     left: -100em;
 }
+#images{
+    display: flex;
+    flex-wrap: wrap
+}
+.image{
+    width: 100%
+}
+.post{
+    color: black;
+    background: white
+}
+.textarea{
+    color: black
+}
+.overall{
+    background: rgba(255, 255, 255, 0.5)
+}
