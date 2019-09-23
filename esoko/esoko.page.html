@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title align-text>marketplace
-      <ion-button float-right shape="round" (click)="uploadFile()" *ngIf="!imageURL"  color=primary fill="outline"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+      <ion-button float-right shape="round" (click)="uploadFile()" *ngIf="!imageURL"  color=primary fill="outline"><ion-icon name="add-circle-outline"></ion-icon>post</ion-button>
   </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,14 +15,13 @@
   
 
 
-     <ion-card   class="cards" *ngIf="imageURL">
+     <!-- <ion-card   class="cards" *ngIf="imageURL">
   <ion-row><ion-col><div><ion-card  ><img  src="https://ucarecdn.com/{{ imageURL}}/"/></ion-card></div></ion-col>
     <ion-card-content>
       <ion-row>
         <ion-col>
-          <ion-textarea placeholder="location:
-          price"[(ngModel)]="desc">
-            </ion-textarea><ion-icon color="primary" name="pin"></ion-icon>
+          <ion-textarea placeholder="Enter description in this format:" [(ngModel)]="desc"><ion-icon color="primary" name="pin"></ion-icon>
+            </ion-textarea>
         </ion-col>
       </ion-row>
      <div float-right>
@@ -33,18 +32,36 @@
       </div>
     </ion-card-content>
   </ion-row>
-</ion-card>   
+</ion-card>    -->
 <!-- display the posted content -->
 
- <div id="images">
+<ion-card class="cards" *ngIf="imageURL">
   
+  <ion-card  ><img  src="https://ucarecdn.com/{{ imageURL}}/"/></ion-card>
+  <ion-card-content>
+  <ion-textarea class="textarea" placeholder="Enter desc e.g product type, price, location, quantity and a little description"  [(ngModel)]="desc"></ion-textarea>
+  <ion-button  (click)="createPost()" class="col text-right"  size="medium" shape="round" color="light" > 
+      <ion-icon  size="medium" slot="start"  color="danger" name="ios-cloud-upload"></ion-icon>
+    <ion-label>post</ion-label>
+  </ion-button>
+</ion-card-content>
+</ion-card>
+
+
+
+ <div id="images">
+ 
+    
+
   <div class="image" *ngFor="let post of (userPosts | async)?.posts">
+    <ion-card class="overall">
     <ion-card class="cards">
-      <ion-img src="https://ucarecdn.com/{{post.image}}/-/scale_crop/200x200/center"></ion-img>
-        
+      <ion-img src="https://ucarecdn.com/{{post.image}}/-/scale_crop/400x400/center"></ion-img>
+    </ion-card>
+    <ion-card>
         <ion-card-content class="post"> <p>{{post.desc}}</p></ion-card-content>
         </ion-card>
-    
+    </ion-card>
   </div>
   
 </div>  
@@ -53,13 +70,13 @@
 
 
 
-<!-- start of image button function  -->
-<!-- <img [src]="currentImage" *ngIf="currentImage">
+ <!-- start of image button function   -->
+ <!-- <img [src]="currentImage" *ngIf="currentImage">
 
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="takePicture()">
       <ion-icon name="camera" ></ion-icon>
     </ion-fab-button>
-</ion-fab> -->
+</ion-fab>  -->
 
 </ion-content>
