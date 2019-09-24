@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { MfarmPage } from './mfarm.page';
+import { SMS } from '@ionic-native/sms/ngx';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
+  providers: [SMS],
   declarations: [MfarmPage]
 })
 export class MfarmPageModule {}
