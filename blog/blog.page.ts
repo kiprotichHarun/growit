@@ -24,7 +24,7 @@ export class BlogPage implements OnInit {
   // we need to distinguish which user sent the message. in future we will need to pull this from the db that holds the info and user is logged in
   currentUser='simon'
   newMsg ='';
-  @ViewChild(IonContent) content: IonContent;
+  //@ViewChild(IonContent) content: IonContent;
   constructor( private router: Router, public af: AngularFireAuth, public fs: AngularFirestore,
      private contacts: Contacts,
      private callNumber:CallNumber,private sms: SMS, private toastCtrl: ToastController,public actionSheetController: ActionSheetController) {
@@ -46,7 +46,7 @@ export class BlogPage implements OnInit {
     this.newMsg ='';
     // this is to endure that when you add the text itthe screen goes to the bottom where the chat is
     setTimeout(() => {
-      this.content.scrollToBottom(200);
+      //this.content.scrollToBottom(200);
     });
     
   }
