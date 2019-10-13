@@ -4,12 +4,10 @@ import { File } from "@ionic-native/file/ngx";
 import {FileTransfer,FileTransferObject} from "@ionic-native/file-transfer/ngx";
 import { FileOpener } from "@ionic-native/file-opener/ngx";
 import {DocumentViewer} from '@ionic-native/document-viewer/ngx'
-
+import {Http} from '@angular/http';
 import { SMS } from '@ionic-native/sms/ngx';
-import { AlertController } from '@ionic/angular';
-
-
-
+import { AlertController, } from '@ionic/angular';
+import { firestore } from 'firebase/app';
 
 @Component({
   selector: 'app-mfarm',
@@ -17,15 +15,18 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./mfarm.page.scss'],
 })
 export class MfarmPage implements OnInit {
+
   fileTransfer: FileTransferObject;
   browser: any
   constructor( private router:Router,
     private sms: SMS,
+  public http: Http,
     public alertController: AlertController,
     private fileOpener: FileOpener,
     private file: File,
     private ft: FileTransfer,
-    private document: DocumentViewer
+    private document: DocumentViewer,
+
    ) { }
 
     
@@ -57,5 +58,6 @@ export class MfarmPage implements OnInit {
       this.fileOpener.open(url, 'application/pdf');
     })
   }
+
 }
 

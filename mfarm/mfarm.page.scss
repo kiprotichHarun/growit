@@ -22,7 +22,7 @@ ion-slide > img {
 }
 
 .content{
-  --background: linear-gradient(180deg, rgba(0, 0, 0, 0.98) 1.48%, rgba(19, 70, 117, 0.68) 12.52%, rgba(243, 136, 141, 0.685) 89.52%), url('../../assets/img/comp.jpg') no-repeat center center / cover;
+  --background: linear-gradient(180deg, rgba(0, 0, 0, 0.822) 1.48%, rgba(19, 70, 117, 0.68) 12.52%, rgba(243, 136, 141, 0.685) 89.52%), url('../../assets/img/comp.jpg') no-repeat center center / cover;
 }
 
 
@@ -69,7 +69,7 @@ ion-slide > img {
 .video{
   background-color: white;
   width: 100%;
-  left: -3%;
+  left: -2%;
 }
 .desc{
 text-align: left;
@@ -85,4 +85,8 @@ font-family: 'Acme', sans-serif;
 }
 .heading{
   color: whitesmoke
+}
+.divider{
+  background-color: rgba(236, 242, 247, 0.11);
+  color: white
 }
