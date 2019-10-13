@@ -1,21 +1,23 @@
 <ion-header>
   <ion-toolbar>
     <ion-title align-text>marketplace
-      <ion-button float-right shape="round" (click)="uploadFile()" *ngIf="!imageURL"  color=primary fill="outline"><ion-icon name="add-circle-outline"></ion-icon>post</ion-button>
-  </ion-title>
+      <ion-button float-right shape="round" (click)="uploadFile()" *ngIf="!imageURL" color=primary fill="outline">
+        <ion-icon name="add-circle-outline"></ion-icon>post
+      </ion-button>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="contents">
   <br>
- <!-- for picking the input from the user -->
-    <input type="file" *ngIf="!imageURL" (change)="fileChanged($event)" class="filebtn" #fileButton/>
-    
-    <!-- <ion-button float-center shape="round" (click)="uploadFile()" *ngIf="!imageURL"  color=primary fill="outline">Upload File</ion-button> -->
-  
+  <!-- for picking the input from the user -->
+  <input type="file" *ngIf="!imageURL" (change)="fileChanged($event)" class="filebtn" #fileButton />
+
+  <!-- <ion-button float-center shape="round" (click)="uploadFile()" *ngIf="!imageURL"  color=primary fill="outline">Upload File</ion-button> -->
 
 
-     <!-- <ion-card   class="cards" *ngIf="imageURL">
+
+  <!-- <ion-card   class="cards" *ngIf="imageURL">
   <ion-row><ion-col><div><ion-card  ><img  src="https://ucarecdn.com/{{ imageURL}}/"/></ion-card></div></ion-col>
     <ion-card-content>
       <ion-row>
@@ -33,45 +35,49 @@
     </ion-card-content>
   </ion-row>
 </ion-card>    -->
-<!-- display the posted content -->
+  <!-- display the posted content -->
 
-<ion-card class="cards" *ngIf="imageURL">
-  
-  <ion-card  ><img  src="https://ucarecdn.com/{{ imageURL}}/"/></ion-card>
-  <ion-card-content>
-  <ion-textarea class="textarea" placeholder="Enter desc e.g product type, price, location, quantity and a little description"  [(ngModel)]="desc"></ion-textarea>
-  <ion-button  (click)="createPost()" class="col text-right"  size="medium" shape="round" color="light" > 
-      <ion-icon  size="medium" slot="start"  color="danger" name="ios-cloud-upload"></ion-icon>
-    <ion-label>post</ion-label>
-  </ion-button>
-</ion-card-content>
-</ion-card>
+  <ion-card class="cards" *ngIf="imageURL">
+
+    <ion-card><img src="https://ucarecdn.com/{{ imageURL}}/" /></ion-card>
+    <ion-card-content>
+      <ion-textarea class="textarea"
+        placeholder="Enter desc e.g product type, price, location, quantity and a little description"
+        [(ngModel)]="desc"></ion-textarea>
+      <ion-button (click)="createPost()" class="col text-right" size="medium" shape="round" color="light">
+        <ion-icon size="medium" slot="start" color="danger" name="ios-cloud-upload"></ion-icon>
+        <ion-label>post</ion-label>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 
 
 
- <div id="images">
- 
-    
+  <div id="images">
 
-  <div class="image" *ngFor="let post of (userPosts | async)?.posts">
-    <ion-card class="overall">
-    <ion-card class="cards">
-      <ion-img src="https://ucarecdn.com/{{post.image}}/-/scale_crop/400x400/center"></ion-img>
-    </ion-card>
-    <ion-card>
-        <ion-card-content class="post"> <p>{{post.desc}}</p></ion-card-content>
+
+
+    <div class="image" *ngFor="let post of (userPosts | async)?.posts">
+      <ion-card class="overall">
+        <ion-card class="cards">
+          <ion-img src="https://ucarecdn.com/{{post.image}}/-/scale_crop/400x400/center"></ion-img>
         </ion-card>
-    </ion-card>
+        <ion-card>
+          <ion-card-content class="post">
+            <p>{{post.desc}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-card>
+    </div>
+
   </div>
-  
-</div>  
 
 
 
 
 
- <!-- start of image button function   -->
- <!-- <img [src]="currentImage" *ngIf="currentImage">
+  <!-- start of imagmagee button function   -->
+  <!-- <img [src]="currentImage" *ngIf="currentImage">
 
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="takePicture()">
