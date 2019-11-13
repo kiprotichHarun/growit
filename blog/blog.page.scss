@@ -1,34 +1,40 @@
 .content{
     --background: #ffffff url('../../assets/img/coffee.jpg') no-repeat center center / cover;
 }
-.message{
-padding: 10px;
-border-radius: 10px;
-margin-bottom: 4px;
-white-space: pre-wrap;
-}
-.other-message{
-   background: rgba(7, 60, 233, 0.747);
-   color: rgb(248, 248, 248)
-}
-.mymessage{
-    background: rgba(29, 247, 0, 0.692);
-    color: rgb(255, 255, 255)
-}
-.time{
-color: black;
-font-style: italic
-}
-.message-input{
-width: 100%;
-border: 2px solid rgba(29, 134, 253, 0.808);
-border-radius: 10px;
-background: rgb(255, 255, 255);
-resize: none;
-padding-left: 10px;
-padding-right: 10px
-}
-.msg-btn{
- --padding-start:0.5em;
- --padding-end:0.5em;
-}
+
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+  }
+   
+  .my-message {
+    background: rgba(3, 101, 248, 0.829);
+    color: #fff;
+  }
+   
+  .other-message {
+    background: rgb(255, 255, 255);
+    color: rgb(10, 10, 10);
+  }
+   
+  .time {
+    color: #000000;
+    float: right;
+    font-size: small;
+  }
+   
+  .message-input {
+    margin-top: 0px;
+    border: 1px solid ;
+    border-radius: 10px;
+    background: #fff;
+    border-color: red($color: #f70a0a9c)
+  }
+   
+  .msg-btn {
+    --padding-start: 0.5em;
+    --padding-end: 0.5em;
+  }
