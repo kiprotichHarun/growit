@@ -9,7 +9,11 @@ import { ActionSheetController } from '@ionic/angular';
   styleUrls: ['./contact.page.scss'],
 })
 export class ContactPage implements OnInit {
-heartType: string
+message: string
+taarifa: string
+ujumbe: string
+barua: string
+
   constructor(
     private sms: SMS,
     public alertController: AlertController,
@@ -19,8 +23,11 @@ heartType: string
 
   ngOnInit() {
   }
+
+
   // veterinanry farmers
   async presentAlertConfirm() {
+    const Message = this.message
     const alert = await this.alertController.create({
       header: 'Confirm!',
       mode:'ios',
@@ -31,7 +38,7 @@ heartType: string
           // role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
-            this.sms.send('0705527213', 'code 100: hello there i would like to invite you to visit our area and expound more on veterinary services !');
+            this.sms.send('0708108472', 'code 100:' + this.taarifa +  'thanks in advance for you help !');
           }
         }, {
           text: 'cancel',
@@ -57,7 +64,7 @@ heartType: string
           // role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
-            this.sms.send('0705527213', 'code 100: hello there i would like to invite you to visit our area and offer extension services !');
+            this.sms.send('0708108472', 'code 100:' + this.message + 'any assistance given will be highly appreciated!');
           }
         }, {
           text: 'cancel',
@@ -83,7 +90,7 @@ heartType: string
           // role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
-            this.sms.send('0705527213', 'code 100: hello there i would like to invite you to visit our area and offer your services pertaining to fish farming!');
+            this.sms.send('0708108472', 'code 100:' + this.ujumbe + 'thankyou in advance  for your help!');
           }
         }, {
           text: 'cancel',
@@ -96,8 +103,33 @@ heartType: string
 
     await alert.present();
   }
+ 
+  // goes to tea farming
 
+  async chai() {
+    const alert = await this.alertController.create({
+      header: 'Confirm!',
+      mode:'ios',
+      message: '<strong>stuck with fishing and in need of help? you can get the help you need through the our sms service<strong><br>would you like to continue',
+      buttons: [
+        {
+          text: 'okay',
+          // role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            this.sms.send('0708108472', 'code 100:' + this.barua + 'thankyou in advance  for your help!');
+          }
+        }, {
+          text: 'cancel',
+          handler: () => {
+            console.log('Confirm cancel');
+          }
+        }
+      ]
+    });
 
+    await alert.present();
+  }
   // action sheet
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
@@ -108,14 +140,14 @@ heartType: string
         role: 'destructive',
         icon: 'ios-mail',
         handler: () => {
-          this.sms.send('0705527213', 'good job you guys are doing welldone!');
+          this.sms.send('0708108472', 'good job you guys are doing welldone!');
         }
       
       }, {
         text: 'not happy with the services offered',
         icon: 'sad',
         handler: () => {
-          this.sms.send('0705527213', 'im not happy with the services offered, alot more could be done to improve it!');
+          this.sms.send('0708108472', 'im not happy with the services offered, alot more could be done to improve it!');
         }
       
       }, {
@@ -129,8 +161,5 @@ heartType: string
     });
     await actionSheet.present();
   }
-  toggleHeart(){
-    this.heartType = this.heartType == "heart" ? "heart-empty" : "heart"
-    this.sms.send('0705527213', 'Thanks alot for the help given i appreciate the good work!');
-  }
+  
 }

@@ -1,72 +1,97 @@
 <ion-toolbar>
-  <ion-header>
-      <img src="assets/img/mfarm.png" height="50px" width="50px" class="logo"/>
-<ion-button float-right fill="clear" size="large" (click)="presentActionSheet()"><ion-icon name="ios-list" size="medium"  ></ion-icon></ion-button>
+   <ion-header>
+      <img src="assets/img/mfarm.png" height="50px" width="50px" class="logo" />
+      <ion-button float-right fill="clear" size="large" (click)="presentActionSheet()">
+         <ion-icon name="ios-list" size="medium"></ion-icon>
+      </ion-button>
    </ion-header>
 </ion-toolbar>
 
 
-    <ion-content class="content" padding  >
-       
+<ion-content class="content" padding>
 
-<!-- veterinary services -->
-  <ion-card class="width" >
-    
- <ion-button (click)="presentAlertConfirm()" float-right class="jj" fill="clear"><ion-icon name="text"size="large" color="light"></ion-icon></ion-button>
- 
-    <ion-img src="/assets/img/sheep.jpg"></ion-img>
-   
-    <ion-card-content class="words"> <div class="maandishi">Veterinary Services</div> 
-      With the help of the right expert you can boost your livestock's health and improve productivity
+
+   <!-- veterinary services -->
+   <ion-card class="width">
+
+      <ion-button (click)="presentAlertConfirm()" float-right class="jj" fill="clear">
+         <ion-icon name="text" size="large" color="light"></ion-icon>
+      </ion-button>
+
+      <ion-img src="/assets/img/sheep.jpg"></ion-img>
+
+      <ion-card-content class="words">
+         <div class="maandishi">Veterinary Services</div>
+         With the help of the right expert you can boost your livestock's health and improve productivity
+
+         <ion-textarea color="dark" placeholder="send your pesronal message to the vet..." [(ngModel)]="taarifa">
+         </ion-textarea>
       </ion-card-content>
-    
-</ion-card> 
- 
-<!-- extension officer -->
-<ion-card class="width" >
-    
-    <ion-button (click)="extension()" float-right class="jj" fill="clear"><ion-icon name="text"size="large" color="light"></ion-icon></ion-button>
-    
-       <ion-img src="/assets/img/nigeria.jpg"></ion-img>
-       <ion-card-content class="words"> <div class="maandishi">Extension Services</div>
-         
-        you can use the messaging service to contact an extension officer and learn more on crop cultivation
-         
-       </ion-card-content>
-       
-   </ion-card> 
+
+   </ion-card>
+
+   <!-- extension officer -->
+   <ion-card class="width">
+
+      <ion-button (click)="extension()" float-right class="jj" fill="clear">
+         <ion-icon name="text" size="large" color="light"></ion-icon>
+      </ion-button>
+
+      <ion-img src="/assets/img/nigeria.jpg"></ion-img>
+      <ion-card-content class="words">
+         <div class="maandishi">Extension Services</div>
+
+         you can use the messaging service to contact an extension officer and learn more on crop cultivation
+
+
+
+         <ion-textarea color="dark" placeholder="you can also add your own personal message here..."
+            [(ngModel)]="message"></ion-textarea>
+
+      </ion-card-content>
+   </ion-card>
 
    <!-- fishing services -->
    <ion-card class="width">
-    
-      <ion-button (click)="fishing()" float-right class="jj" fill="clear"><ion-icon name="ios-boat"size="large" color="dark"></ion-icon></ion-button>
-      
-         <ion-img src="/assets/img/house.jpg"></ion-img>
-         
-         <ion-card-content class="words">
-           <div class="maandishi">
-          Fish Farming
+
+      <ion-button (click)="fishing()" float-right class="jj" fill="clear">
+         <ion-icon name="ios-boat" size="large" color="dark"></ion-icon>
+      </ion-button>
+
+      <ion-img src="/assets/img/house.jpg"></ion-img>
+
+      <ion-card-content class="words">
+         <div class="maandishi">
+            Fish Farming
          </div>
-        Improve the productivity of your fish farms by ensuring that you are under the close guidance of fish farming specialists </ion-card-content>
+         Improve the productivity of your fish farms by ensuring that you are under the close guidance of fish farming
+         specialists
 
-     </ion-card> 
-     
+         <ion-textarea color="dark" placeholder="send your pesronal message to the fish expert..." [(ngModel)]="ujumbe">
+         </ion-textarea>
+      </ion-card-content>
 
-     <!-- tea farming -->
-     <ion-card class="width">
-    
-        <ion-button (click)="fishing()" float-right class="jj" fill="clear"><ion-icon name="text"size="large" color="dark"></ion-icon></ion-button>
-        
-           <ion-img src="/assets/img/tea.jpg"></ion-img>
-           
-           <ion-card-content class="words">
-             <div class="maandishi">
-           Tea Farming
-           </div>
-          Have all your questions on tea growing answered by the right specialists </ion-card-content>
-  <ion-item  (click)="toggleHeart()">
-     <ion-icon color="danger" [name]="heartType"></ion-icon>
-  </ion-item>
-       </ion-card> 
+   </ion-card>
+
+
+   <!-- tea farming -->
+   <ion-card class="width">
+
+      <ion-button (click)="chai()" float-right class="jj" fill="clear">
+         <ion-icon name="text" size="large" color="dark"></ion-icon>
+      </ion-button>
+
+      <ion-img src="/assets/img/tea.jpg"></ion-img>
+
+      <ion-card-content class="words">
+         <div class="maandishi">
+            Tea Farming
+         </div>
+         Have all your questions on tea growing answered by the right specialists
+         <ion-textarea color="dark" placeholder="send your pesronal message to the tea expert..." [(ngModel)]="barua">
+         </ion-textarea>
+      </ion-card-content>
+
+   </ion-card>
 
 </ion-content>
